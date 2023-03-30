@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repositories;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;
@@ -55,20 +55,29 @@ class BaseRepository
         return $query->first();
     }
 
+    public function getById($id)
+    {
+        $data = $this->model->findOrFail($id);
+        return $data;
+    }
+
     public function store($data)
     {
         return $this->model->create($data);
     }
 
-    public function update($by, $data, $column = "id")
+    public function update($id, $data)
     {
-        $this->model->where($column, $by)->update($data);
-        return $this->model->where($column, $by)->first();
+        $record = $this->getById($id);
+
+        return tap($record)->update($data);
     }
 
-    public function delete($by, $column = "id")
+    public function delete($id)
     {
-        $this->model->where($column, $by)->delete();
+        $record = $this->getById($id);
+
+        return tap($record)->delete();
     }
 
 
