@@ -69,10 +69,13 @@ geeksJo-assignment.postman_collection.json
 
 Login credentials
 
+### email
 ```
-email : admin@admin.com
-password: admin
-
+admin@admin.com
+```
+### password
+```
+admin
 ```
 
 API That gets countries's cities by country id 
