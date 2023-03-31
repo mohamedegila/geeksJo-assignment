@@ -13,10 +13,16 @@ First clone this repository, install the dependencies, and setup your .env file.
 
 ```
 git clone https://github.com/mohamedegila/geeksJo-assignment.git
-composer install
-cp .env.example .env
-set database credentials
 
+```
+```
+composer install
+```
+```
+cp .env.example .env
+```
+```
+set database credentials
 ```
 
 Then create the necessary database.
@@ -30,12 +36,14 @@ And run the initial migrations and seeders.
 
 ```
 php artisan migrate --seed
+```
 
 OR
-
+```
 php artisan migrate
+```
+```
 php artisan db:seed
-
 ```
 
 Then Run Passport Command
