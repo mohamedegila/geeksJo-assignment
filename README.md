@@ -53,6 +53,13 @@ php artisan passport:install
 
 ```
 
+
+```
+php artisan serve
+
+```
+
+
 Import Postman File
 
 ```
