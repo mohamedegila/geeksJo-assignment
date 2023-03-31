@@ -19,7 +19,7 @@ class CreateCitiesTable extends Migration
             $table->foreignId('country_id')
             ->constrained()
             ->cascadeOnDelete();
-            $table->softDeletes();
+            // $table->softDeletes();
             $table->timestamps();
         });
     }

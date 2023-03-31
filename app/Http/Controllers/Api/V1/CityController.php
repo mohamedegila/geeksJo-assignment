@@ -30,7 +30,7 @@ class CityController extends Controller
      */
     public function index()
     {
-        $cities = $this->cityRepository->get([],false,['country']);
+        $cities = $this->cityRepository->get([],false,['country', 'areas']);
         return $this->success(CityResource::collection( $cities ));
     }
 
