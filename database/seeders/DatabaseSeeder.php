@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             Country::truncate();
         Schema::enableForeignKeyConstraints();
         $this->call([
-            CountrySeeder::class
+            CountrySeeder::class,
+            UserSeeder::class
         ]);
     }
 }

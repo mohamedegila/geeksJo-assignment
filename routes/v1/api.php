@@ -6,6 +6,9 @@ use App\Http\Controllers\Api\V1\CountryController;
 use App\Http\Controllers\Api\V1\CityController;
 use App\Http\Controllers\Api\V1\AreaController;
 
+use App\Http\Controllers\Api\V1\Auth\LoginController;
+use App\Http\Controllers\Api\V1\Auth\RegisterController;
+
 
 
 
@@ -20,17 +23,11 @@ use App\Http\Controllers\Api\V1\AreaController;
 |
 */
 
-Route::get('/', function (){
-    return 'test-api';
-});
+Route::post('login', [LoginController::class, 'login']);
+Route::post('register', [RegisterController::class, 'register']);
 
-
-Route::apiResource('countries', CountryController::class);
-Route::apiResource('cities', CityController::class);
-Route::apiResource('areas', AreaController::class);
-
-
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->group( function () {
+    Route::apiResource('countries', CountryController::class);
+    Route::apiResource('cities',CityController::class);
+    Route::apiResource('areas',AreaController::class);
 });
