@@ -3,7 +3,7 @@
 
 ## System Requirements
 ```
-- php 88.0.25 or above
+- php 8.0.25 or above
 - apache
 - mysql
 ```
