@@ -69,11 +69,11 @@ geeksJo-assignment.postman_collection.json
 
 Login credentials
 
-### email
+- email
 ```
 admin@admin.com
 ```
-### password
+- password
 ```
 admin
 ```
