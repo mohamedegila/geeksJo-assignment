@@ -742,7 +742,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"admin@geeks.io\",\r\n    \"password\": \"admin\"\r\n}"
+							"raw": "{\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"admin\"\r\n}"
 						},
 						"url": {
 							"raw": "{{base_url}}/login",
