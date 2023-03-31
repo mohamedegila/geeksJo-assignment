@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
 
-class Country extends Model
+
+class City extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['name', 'code'];
+    protected $fillable = ['name', 'country_id'];
 
     public function getCreatedAtAttribute($key)
     {
@@ -23,8 +24,8 @@ class Country extends Model
         return Carbon::parse($key)->format('Y-m-d h:i:s a');
     }
 
-    public function cities()
+    public function country()
     {
-        return $this->hasMany(City::class);
+        return $this->belongsTo(Country::class);
     }
 }
